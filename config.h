@@ -36,8 +36,9 @@ static const Rule rules[] = {
 	/* class        instance    title                                 tags mask     isfloating  canfocus  monitor */
 	{ "Gimp",       NULL,       NULL,                                 0,            1,          1,        -1 },
 	{ "Firefox",    NULL,       NULL,                                 1 << 8,       0,          1,        -1 },
-	{ NULL,         NULL,       "Microsoft Teams Notification",       0,            1,          0,        -1 },
+	{ NULL,         NULL,       "Microsoft Teams Notification",       ~0,           1,          0,        -1 },
 	{ NULL,         NULL,       "Picture in picture",                 ~0,           1,          1,        -1 },
+	{ "Pavucontrol",NULL,       "Volume Control",                     0,            1,          1,        -1 },
 };
 
 /* layout(s) */
