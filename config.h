@@ -12,6 +12,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono NL:size=10", "SF Mono:size=10", "monospace:size=10" };
 static const char dmenufont[]       = "JetBrains Mono NL:size=10";
+// Gray color palette
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#555555";
@@ -19,10 +20,16 @@ static const char col_gray4[]       = "#bbbbbb";
 static const char col_gray5[]       = "#eeeeee";
 static const char col_night[]       = "#3b4252";
 static const char col_frost[]       = "#88c0d0";
+// Summer Splash color palette
+static const char col_splash1[]     = "#05445E";
+static const char col_splash2[]     = "#189AB4";
+static const char col_splash4[]     = "#75E6DA";
+static const char col_splash5[]     = "#D4F1F4";
+// Actual colors
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray5, col_night, col_frost },
+	[SchemeNorm] = { col_splash4, col_splash1, col_splash2 },
+	[SchemeSel]  = { col_splash5, col_splash2, col_splash5 },
 };
 
 /* tagging */
