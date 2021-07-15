@@ -10,8 +10,9 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono NL:size=10", "SF Mono:size=10", "monospace:size=10" };
-static const char dmenufont[]       = "JetBrains Mono NL:size=10";
+static const int rmaster            = 0;        /* 1 means master-area is initially on the right */
+static const char *fonts[]          = { "JetBrains Mono:size=10", "SF Mono:size=10", "monospace:size=10" };
+static const char dmenufont[]       = "JetBrains Mono:size=10";
 // Gray color palette
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -28,8 +29,8 @@ static const char col_splash5[]     = "#D4F1F4";
 // Actual colors
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_splash4, col_splash1, col_splash2 },
-	[SchemeSel]  = { col_splash5, col_splash2, col_splash5 },
+	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray5, col_night, col_frost },
 };
 
 /* tagging */
@@ -119,6 +120,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
+	{ MODKEY|ShiftMask,             XK_m,      togglermaster,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
