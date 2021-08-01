@@ -41,14 +41,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class              instance            title                            tags mask  isfloating  canfocus  monitor */
-	{ "Gimp",             NULL,               NULL,                            0,         1,          1,        -1 },
-	{ "Firefox",          NULL,               NULL,                            1 << 8,    0,          1,        -1 },
-	{ NULL,               NULL,               "Microsoft Teams Notification",  ~0,        1,          0,        -1 },
-	{ NULL,               NULL,               "Picture in picture",            ~0,        1,          1,        -1 },
-	{ "Pavucontrol",      NULL,               "Volume Control",                0,         1,          1,        -1 },
-	{ "Termite",          NULL,               "Termite Floating",              0,         1,          1,        -1 },
-	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1 },
+	/* class              instance            title                            tags mask  isfloating  canfocus  monitor  float x,y,w,h        floatborderpx*/
+	{ "Gimp",             NULL,               NULL,                            0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
+	{ "Firefox",          NULL,               NULL,                            1 << 8,    0,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
+	{ NULL,               NULL,               "Picture in picture",            ~0,        1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
+	{ "Pavucontrol",      NULL,               "Volume Control",                0,         1,          1,        -1,      300,200,  -1,  -1,   -1 },
+	{ "Termite",          NULL,               "Termite Floating",              0,         1,          1,        -1,      550,300,  -1,  -1,   -1 },
+	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 };
 
 /* layout(s) */
