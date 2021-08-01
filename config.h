@@ -48,7 +48,7 @@ static const Rule rules[] = {
 	{ NULL,               NULL,               "Picture in picture",            ~0,        1,          1,        -1 },
 	{ "Pavucontrol",      NULL,               "Volume Control",                0,         1,          1,        -1 },
 	{ "Termite",          NULL,               "Termite Floating",              0,         1,          1,        -1 },
-	{ "gnome-calculator", "Gnome-calculator", NULL,                            0,         1,          1,        -1 },
+	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1 },
 };
 
 /* layout(s) */
