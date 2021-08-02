@@ -46,7 +46,7 @@ static const Rule rules[] = {
 	{ "Firefox",          NULL,               NULL,                            1 << 8,    0,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 	{ NULL,               NULL,               "Picture in picture",            ~0,        1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 	{ "Pavucontrol",      NULL,               "Volume Control",                0,         1,          1,        -1,      300,200,  -1,  -1,   -1 },
-	{ "Termite",          NULL,               "Termite Floating",              0,         1,          1,        -1,      550,300,  -1,  -1,   -1 },
+	{ "Alacritty",        NULL,               "Alacritty Floating",            0,         1,          1,        -1,      550,300,  -1,  -1,   -1 },
 	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 };
 
@@ -83,8 +83,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run_history", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray4, "-sb", col_night, "-sf", col_gray5, NULL };
-static const char *termcmd[]  = { "termite", NULL };
-static const char *floattermcmd[]  = { "termite", "--title='Termite Floating'", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
+static const char *floattermcmd[]  = { "alacritty", "--title='Alacritty Floating'", NULL };
 static const char *initcomp[] = { "picom", "-b", NULL };
 static const char *killcomp[] = { "killall", "picom", NULL };
 
