@@ -48,6 +48,7 @@ static const Rule rules[] = {
 	{ "Pavucontrol",      NULL,               "Volume Control",                0,         1,          1,        -1,      300,200,  -1,  -1,   -1 },
 	{ "Alacritty",        NULL,               "Alacritty Floating",            0,         1,          1,        -1,      280,130,  -1,  -1,   -1 },
 	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
+	{ NULL              , NULL,               "Screenshot",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 };
 
 /* layout(s) */
