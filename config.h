@@ -16,7 +16,7 @@ static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=11";
 // Gray color palette
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#555555";
+static const char col_gray3[]       = "#888888";
 static const char col_gray4[]       = "#bbbbbb";
 static const char col_gray5[]       = "#eeeeee";
 static const char col_night[]       = "#3b4252";
@@ -30,7 +30,7 @@ static const char col_splash5[]     = "#D4F1F4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray5, col_night, col_frost },
+	[SchemeSel]  = { col_gray5, col_night, col_gray3 },
 };
 
 /* tagging */
