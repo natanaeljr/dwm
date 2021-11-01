@@ -21,6 +21,10 @@ static const char col_gray4[]       = "#bbbbbb";
 static const char col_gray5[]       = "#eeeeee";
 static const char col_night[]       = "#3b4252";
 static const char col_frost[]       = "#88c0d0";
+static const char col_green1[]      = "#458b00";
+static const char col_green2[]      = "#bced91";
+static const char col_green3[]      = "#76ee00";
+static const char col_green4[]      = "#83f52c";
 // Summer Splash color palette
 static const char col_splash1[]     = "#05445E";
 static const char col_splash2[]     = "#189AB4";
@@ -29,8 +33,8 @@ static const char col_splash5[]     = "#D4F1F4";
 // Actual colors
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray5, col_night, col_gray3 },
+	[SchemeNorm] = { col_green2, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_green4, col_gray2, col_gray3 },
 };
 
 /* tagging */
