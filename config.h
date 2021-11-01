@@ -9,7 +9,7 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const int rmaster            = 0;        /* 1 means master-area is initially on the right */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=11", "Noto Color Emoji:size=11", "monospace:size=11" };
 static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=11";
