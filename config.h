@@ -11,8 +11,8 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int rmaster            = 0;        /* 1 means master-area is initially on the right */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=11", "Noto Color Emoji:size=11", "monospace:size=11" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=11";
+static const char *fonts[]          = { "Fira Code:style:medium:size=10", "JetBrainsMono Nerd Font:sytle:medium:size=11", "Noto Color Emoji:size=11", "monospace:size=11" };
+static const char dmenufont[]       = "Fira Code:style:medium:size=10";
 // Gray color palette
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -30,11 +30,20 @@ static const char col_splash1[]     = "#05445E";
 static const char col_splash2[]     = "#189AB4";
 static const char col_splash4[]     = "#75E6DA";
 static const char col_splash5[]     = "#D4F1F4";
+// One dark color palette
+static const char col_one_black[]   = "#1e222a";
+static const char col_one_gray2[]   = "#2e323a";
+static const char col_one_gray3[]   = "#545862";
+static const char col_one_gray4[]   = "#6d8dad";
+static const char col_one_gray5[]   = "#7b8b9c";
+static const char col_one_blue[]    = "#61afef";
 // Actual colors
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_green2, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_green4, col_gray2, col_gray3 },
+	// [SchemeNorm] = { col_one_white, col_one_black, col_gray2 },
+	// [SchemeSel]  = { col_one_white, col_gray2,     col_gray3 },
+  [SchemeNorm] = { col_one_gray5, col_one_black, col_one_gray2 },
+  [SchemeSel]  = { col_one_gray2, col_one_blue,  col_one_gray3 },
 };
 
 /* tagging */
@@ -63,8 +72,8 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[]=",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },  /* fibonacci patch */
 	{ "[\\]",     dwindle }, /* fibonacci patch */
@@ -112,8 +121,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
 	{ MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
