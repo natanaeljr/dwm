@@ -356,6 +356,7 @@ struct Pertag {
 	unsigned int sellts[LENGTH(tags) + 1]; /* selected layouts */
 	const Layout *ltidxs[LENGTH(tags) + 1][2]; /* matrix of tags and layouts indexes  */
 	int showbars[LENGTH(tags) + 1]; /* display bar for the current tag */
+	unsigned int borderpx[LENGTH(tags) + 1];
 };
 
 /* compile-time check if all tags fit into an unsigned int bit array. */
@@ -841,6 +842,7 @@ createmon(void)
 		m->pertag->sellts[i] = m->sellt;
 
 		m->pertag->showbars[i] = m->showbar;
+	  m->pertag->borderpx[i] = borderpx;
 	}
 
 	return m;
@@ -2146,6 +2148,7 @@ setborderpx(const Arg *arg)
 {
 	Client *c;
 	int prev_borderpx = selmon->borderpx;
+  unsigned int i;
 
 	if (arg->i == 0)
 		selmon->borderpx = borderpx;
@@ -2153,11 +2156,23 @@ setborderpx(const Arg *arg)
 		selmon->borderpx = 0;	
 	else
 		selmon->borderpx += arg->i;	
+
+	for(i=0; i<=LENGTH(tags); ++i)
+		if(selmon->tagset[selmon->seltags] & 1<<i)
+			selmon->pertag->borderpx[(i+1)%(LENGTH(tags)+1)] = selmon->borderpx;
 	
 	for (c = selmon->clients; c; c = c->next)
 	{	
+		if(!(c->tags & selmon->tagset[selmon->seltags]))
+      continue;
+
 		if (c->bw + arg->i < 0)
+    {
 			c->bw = selmon->borderpx = 0;
+	    for(i=0; i<=LENGTH(tags); ++i)
+	    	if(selmon->tagset[selmon->seltags] & 1<<i)
+	    		selmon->pertag->borderpx[(i+1)%(LENGTH(tags)+1)] = 0;
+    }
 		else
 			c->bw = selmon->borderpx;
 		if (c->isfloating || !selmon->lt[selmon->sellt]->arrange)
@@ -2614,6 +2629,7 @@ toggleview(const Arg *arg)
 		selmon->sellt = selmon->pertag->sellts[selmon->pertag->curtag];
 		selmon->lt[selmon->sellt] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt];
 		selmon->lt[selmon->sellt^1] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt^1];
+		selmon->borderpx = selmon->pertag->borderpx[selmon->pertag->curtag];
 
 		if (selmon->showbar != selmon->pertag->showbars[selmon->pertag->curtag])
 			togglebar(NULL);
@@ -3072,6 +3088,7 @@ view(const Arg *arg)
 	selmon->sellt = selmon->pertag->sellts[selmon->pertag->curtag];
 	selmon->lt[selmon->sellt] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt];
 	selmon->lt[selmon->sellt^1] = selmon->pertag->ltidxs[selmon->pertag->curtag][selmon->sellt^1];
+	selmon->borderpx = selmon->pertag->borderpx[selmon->pertag->curtag];
 
 	if (selmon->showbar != selmon->pertag->showbars[selmon->pertag->curtag])
 		togglebar(NULL);
