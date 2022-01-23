@@ -37,13 +37,14 @@ static const char col_one_gray3[]   = "#545862";
 static const char col_one_gray4[]   = "#6d8dad";
 static const char col_one_gray5[]   = "#7b8b9c";
 static const char col_one_blue[]    = "#61afef";
+static const char col_one_green[]   = "#98c379";
 // Actual colors
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	// [SchemeNorm] = { col_one_white, col_one_black, col_gray2 },
 	// [SchemeSel]  = { col_one_white, col_gray2,     col_gray3 },
   [SchemeNorm] = { col_one_gray5, col_one_black, col_one_gray2 },
-  [SchemeSel]  = { col_one_gray2, col_one_blue,  col_one_gray3 },
+  [SchemeSel]  = { col_one_gray2, col_one_green, col_one_gray3 },
 };
 
 /* tagging */
