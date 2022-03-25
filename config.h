@@ -9,7 +9,7 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const int rmaster            = 0;        /* 1 means master-area is initially on the right */
 static const char *fonts[]          = { "Fira Code:style:medium:size=10", "JetBrainsMono Nerd Font:sytle:medium:size=11", "Noto Color Emoji:size=11", "monospace:size=10" };
 static const char dmenufont[]       = "Fira Code:style:medium:size=10";
@@ -63,6 +63,7 @@ static const Rule rules[] = {
 	{ "Alacritty",        NULL,               "Alacritty Floating",            0,         1,          1,        -1,      280,130,  -1,  -1,    1 },
 	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 	{ NULL              , NULL,               "Screenshot",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
+	{ "Notification-daemon", NULL,            "Notification",                  ~0,        1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 };
 
 /* layout(s) */
