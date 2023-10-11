@@ -64,6 +64,7 @@ static const Rule rules[] = {
 	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 	{ NULL              , NULL,               "Screenshot",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 	{ "Notification-daemon", NULL,            "Notification",                  ~0,        1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
+	{ "Onboard",          NULL,               "Onboard",                       ~0,        1,          0,        -1,      -1,  -1, 326, 130,   -1 },
 };
 
 /* layout(s) */
