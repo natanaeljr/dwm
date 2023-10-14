@@ -63,7 +63,7 @@ static const Rule rules[] = {
 	{ "Alacritty",        NULL,               "Alacritty Floating",            0,         1,          1,        -1,      280,130,  -1,  -1,    1 },
 	{ NULL              , NULL,               "Calculator",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
 	{ NULL              , NULL,               "Screenshot",                    0,         1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
-	{ "Notification-daemon", NULL,            "Notification",                  ~0,        1,          1,        -1,      -1,  -1,  -1,  -1,   -1 },
+	{ "Notification-daemon", NULL,            "Notification",                  ~0,        1,          0,        -1,      -1,  -1,  -1,  -1,   -1 },
 	{ "Onboard",          NULL,               "Onboard",                       ~0,        1,          0,        -1,      -1,  -1, 326, 130,   -1 },
 };
 
